@@ -102,3 +102,72 @@ body,
 body * {
     font-family: 'Be Vietnam Pro', Arial, sans-serif !important;
 }
+
+
+/* =====================================
+   BO SUNG GIAO DIEN RIENG CHO BAI TAP 05
+   ===================================== */
+
+/* Thong tin bai tap */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 15px;
+}
+
+.info-item {
+    background: var(--paper2);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+/* Khung prompt */
+.prompt-box {
+    background: var(--paper2);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+    padding: 22px;
+    margin: 16px 0;
+    color: var(--ink);
+    line-height: 1.75;
+}
+
+/* Khung video */
+.video-box {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: 20px 0;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #222;
+}
+
+.video-box iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+/* Ghi chu */
+.note {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+    margin-top: 14px;
+}
+
+/* Dien thoai va man hinh nho */
+@media (max-width: 760px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .video-box {
+        margin: 14px 0;
+    }
+}
+
