@@ -57,3 +57,22 @@ footer{border-top:1px solid var(--line);background:var(--paper2);padding:25px 5v
  .hero{min-height:300px;padding:75px 20px}.profile{grid-template-columns:1fr}.avatar-wrap{margin:0;max-width:100%}.avatar{height:360px}
  .content-grid,.project-grid,.skill-list{grid-template-columns:1fr}.info-list{grid-template-columns:1fr 1fr}.card{padding:23px}
 }
+.detail-link {
+    display: inline-flex;
+    margin-top: 12px;
+    color: #b8754e;
+    background: #f8f6f0;
+    border: 1px solid #ded9cc;
+    border-radius: 9px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.detail-link:hover {
+    background: #25251f;
+    color: white;
+    border-color: #25251f;
+    transform: translateY(-2px);
+}
