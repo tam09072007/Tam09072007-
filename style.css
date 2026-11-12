@@ -96,3 +96,9 @@ footer{border-top:1px solid var(--line);background:var(--paper2);padding:25px 5v
     background-color: #e8e2d7 !important;
     color: #292923 !important;
 }
+
+/* DONG BO PHONG CHU TOAN BO PORTFOLIO */
+body,
+body * {
+    font-family: 'Be Vietnam Pro', Arial, sans-serif !important;
+}
