@@ -76,3 +76,23 @@ footer{border-top:1px solid var(--line);background:var(--paper2);padding:25px 5v
     border-color: #25251f;
     transform: translateY(-2px);
 }
+
+/* Nút xem PDF và tải Word ở bài tập */
+.actions .btn {
+    display: inline-block !important;
+    padding: 16px 24px !important;
+    border-radius: 12px !important;
+    background-color: #f1eee7 !important;
+    border: 1px solid #ddd5c7 !important;
+    color: #292923 !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    margin-right: 8px !important;
+    transition: 0.2s ease;
+}
+
+.actions .btn:hover {
+    background-color: #e8e2d7 !important;
+    color: #292923 !important;
+}
