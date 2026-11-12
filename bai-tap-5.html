@@ -1,0 +1,546 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Bài tập 05 - Sử dụng AI tạo sinh hỗ trợ sáng tạo nội dung số">
+<title>Bài tập 05 | Nguyễn Thiện Tâm</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1eee7;
+    color: #292923;
+    line-height: 1.8;
+}
+
+.site-header {
+    background: #fffefa;
+    border-bottom: 1px solid #ded8cc;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.brand {
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #292923;
+    text-decoration: none;
+}
+
+.nav a {
+    color: #666;
+    text-decoration: none;
+}
+
+.hero {
+    background: #fffefa;
+    padding: 65px 8%;
+    border-bottom: 1px solid #ded8cc;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
+
+.label {
+    color: #b8794e;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin: 15px 0;
+    line-height: 1.3;
+}
+
+.hero p {
+    color: #766f64;
+    max-width: 750px;
+    font-size: 16px;
+}
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 12px;
+    background: #f1eee7;
+    border: 1px solid #ddd5c7;
+    color: #292923;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #292923;
+    color: white;
+}
+
+.btn-primary {
+    background: #292923;
+    color: white;
+}
+
+.card {
+    background: #fffefa;
+    border: 1px solid #e2dbcf;
+    border-radius: 18px;
+    padding: 28px;
+    margin-bottom: 22px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.03);
+}
+
+h2 {
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 17px;
+    margin: 18px 0 8px;
+}
+
+p {
+    margin-bottom: 12px;
+}
+
+ul, ol {
+    padding-left: 25px;
+    margin: 10px 0;
+}
+
+li {
+    margin-bottom: 7px;
+}
+
+.highlight {
+    color: #b8794e;
+    font-weight: bold;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.info-item {
+    background: #f7f4ed;
+    border: 1px solid #e8e0d4;
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.info-item small {
+    color: #80786d;
+    display: block;
+}
+
+.info-item strong {
+    display: block;
+    margin-top: 5px;
+}
+
+.prompt-box {
+    background: #f7f4ed;
+    border-left: 4px solid #b8794e;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 12px;
+}
+
+.video-box {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: 20px 0;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #222;
+}
+
+.video-box iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.note {
+    color: #766f64;
+    font-size: 14px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    color: #80786d;
+    border-top: 1px solid #ded8cc;
+    background: #fffefa;
+}
+
+@media(max-width: 600px) {
+    .hero {
+        padding: 45px 6%;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 21px;
+    }
+
+    .site-header {
+        padding: 16px 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <a href="index.html" class="brand">MY PORTFOLIO.</a>
+    <nav class="nav">
+        <a href="du-an.html">Dự án học tập</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="label">BÀI TẬP 05 / 06</div>
+
+    <h1>Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung</h1>
+
+    <p>
+        Ứng dụng trí tuệ nhân tạo trong quá trình xây dựng
+        và hoàn thiện sản phẩm nội dung số phục vụ học tập
+        và giảng dạy Âm nhạc.
+    </p>
+
+    <div class="button-row">
+        <a href="du-an.html" class="btn">← Danh sách bài tập</a>
+        <a href="#san-pham" class="btn btn-primary">
+            Xem sản phẩm
+        </a>
+    </div>
+</section>
+
+<main class="container">
+
+    <section class="card">
+        <h2>1. Giới thiệu bài tập</h2>
+
+        <p>
+            Bài tập 05 tập trung vào việc sử dụng AI tạo sinh
+            để hỗ trợ sáng tạo nội dung số. Thông qua bài tập,
+            mình tìm hiểu cách ứng dụng AI trong việc hình thành
+            ý tưởng, xây dựng nội dung và hoàn thiện sản phẩm
+            phục vụ học tập.
+        </p>
+
+        <p>
+            Với chuyên ngành Sư phạm Âm nhạc, mình lựa chọn
+            hướng sáng tạo nội dung giáo dục âm nhạc nhằm
+            tạo ra sản phẩm trực quan, sinh động và dễ tiếp cận
+            đối với học sinh.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2>2. Thông tin bài tập</h2>
+
+        <div class="info-grid">
+            <div class="info-item">
+                <small>Sinh viên</small>
+                <strong>Nguyễn Thiện Tâm</strong>
+            </div>
+
+            <div class="info-item">
+                <small>Ngành học</small>
+                <strong>Sư phạm Âm nhạc</strong>
+            </div>
+
+            <div class="info-item">
+                <small>Học phần</small>
+                <strong>Nhập môn Công nghệ số và ứng dụng AI</strong>
+            </div>
+
+            <div class="info-item">
+                <small>Nội dung</small>
+                <strong>Sáng tạo nội dung số với AI</strong>
+            </div>
+
+            <div class="info-item">
+                <small>Mục bài học</small>
+                <strong>5.4 – Trưng bày sản phẩm nội dung số</strong>
+            </div>
+
+            <div class="info-item">
+                <small>Sản phẩm lựa chọn</small>
+                <strong>Video nội dung số</strong>
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>3. Mục tiêu thực hiện</h2>
+
+        <ul>
+            <li>Hiểu được khả năng hỗ trợ sáng tạo nội dung của AI tạo sinh.</li>
+            <li>Biết cách sử dụng AI để phát triển ý tưởng và xây dựng nội dung.</li>
+            <li>Ứng dụng công nghệ số vào việc thiết kế học liệu âm nhạc.</li>
+            <li>Biết kiểm tra, chỉnh sửa và đánh giá sản phẩm do AI hỗ trợ.</li>
+            <li>Rèn luyện khả năng trình bày và chia sẻ sản phẩm số.</li>
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2>4. Công cụ AI và công nghệ sử dụng</h2>
+
+        <h3>ChatGPT</h3>
+        <p>
+            Hỗ trợ hình thành ý tưởng, xây dựng nội dung,
+            viết lời dẫn và sắp xếp các phần của sản phẩm.
+        </p>
+
+        <h3>Canva AI</h3>
+        <p>
+            Hỗ trợ thiết kế hình ảnh, bố cục trực quan,
+            lựa chọn phong cách trình bày và xây dựng
+            các thành phần minh họa.
+        </p>
+
+        <h3>YouTube</h3>
+        <p>
+            Sử dụng để đăng tải, chia sẻ và giới thiệu
+            sản phẩm video hoàn thiện.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2>5. Ý tưởng và nội dung sản phẩm</h2>
+
+        <p>
+            Mình lựa chọn hướng xây dựng nội dung số phục vụ
+            việc học tập và giảng dạy Âm nhạc ở trường THCS.
+            Sản phẩm được định hướng theo phong cách trực quan,
+            dễ hiểu, có hình ảnh minh họa và nội dung phù hợp
+            với đối tượng học sinh.
+        </p>
+
+        <h3>Định hướng xây dựng sản phẩm</h3>
+
+        <ul>
+            <li>Xác định chủ đề và đối tượng tiếp nhận nội dung.</li>
+            <li>Sử dụng AI hỗ trợ xây dựng ý tưởng và kịch bản.</li>
+            <li>Lựa chọn hình ảnh, âm thanh và cách trình bày phù hợp.</li>
+            <li>Chỉnh sửa nội dung để bảo đảm tính chính xác và dễ hiểu.</li>
+            <li>Hoàn thiện và trình bày sản phẩm trên nền tảng số.</li>
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2>6. Prompt sử dụng để hỗ trợ sáng tạo</h2>
+
+        <p>
+            Mình sử dụng câu lệnh dưới đây để định hướng
+            AI hỗ trợ xây dựng nội dung giáo dục âm nhạc:
+        </p>
+
+        <div class="prompt-box">
+            Bạn là chuyên gia thiết kế học liệu Âm nhạc THCS.
+            Hãy hỗ trợ tôi xây dựng nội dung cho một video
+            giáo dục âm nhạc dành cho học sinh lớp 6.
+
+            <br><br>
+
+            Yêu cầu:
+            <br>
+            - Nội dung gần gũi, dễ hiểu và phù hợp lứa tuổi.
+            <br>
+            - Trình bày kiến thức âm nhạc rõ ràng, chính xác.
+            <br>
+            - Có phần mở đầu, nội dung chính và kết thúc.
+            <br>
+            - Đề xuất hình ảnh minh họa và lời dẫn phù hợp.
+            <br>
+            - Ngôn ngữ tự nhiên, ngắn gọn, sinh động.
+        </div>
+
+        <p class="note">
+            Prompt là câu lệnh định hướng; nội dung AI tạo ra
+            cần được kiểm tra và chỉnh sửa trước khi sử dụng.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2>7. Quá trình thực hiện</h2>
+
+        <ol>
+            <li>
+                <strong>Xác định ý tưởng:</strong>
+                Lựa chọn chủ đề nội dung giáo dục âm nhạc
+                phù hợp với chuyên ngành.
+            </li>
+
+            <li>
+                <strong>Sử dụng AI:</strong>
+                Đưa yêu cầu vào ChatGPT để phát triển ý tưởng,
+                xây dựng nội dung và lời dẫn.
+            </li>
+
+            <li>
+                <strong>Thiết kế nội dung:</strong>
+                Sắp xếp hình ảnh, âm thanh và bố cục trình bày
+                bằng các công cụ hỗ trợ.
+            </li>
+
+            <li>
+                <strong>Kiểm tra và chỉnh sửa:</strong>
+                Đối chiếu kiến thức, sửa lỗi và hoàn thiện
+                sản phẩm.
+            </li>
+
+            <li>
+                <strong>Trưng bày sản phẩm:</strong>
+                Chia sẻ video trên nền tảng YouTube
+                để giới thiệu kết quả thực hiện.
+            </li>
+        </ol>
+    </section>
+
+    <section class="card" id="san-pham">
+        <h2>8. Sản phẩm nội dung số hoàn thiện</h2>
+
+        <p>
+            Sản phẩm video được giới thiệu dưới đây là phần
+            trưng bày nội dung số của bài tập 05.
+            Video được chia sẻ thông qua nền tảng YouTube.
+        </p>
+
+        <div class="video-box">
+            <iframe
+                src="https://www.youtube.com/embed/XSFTkVy316M"
+                title="Video sản phẩm bài tập 05"
+                allow="accelerometer; autoplay; clipboard-write;
+                encrypted-media; gyroscope; picture-in-picture;
+                web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="button-row">
+            <a href="https://www.youtube.com/watch?v=XSFTkVy316M"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-primary">
+                ▶ Xem video trên YouTube
+            </a>
+        </div>
+
+        <p class="note">
+            Nhấn nút phía trên nếu video không hiển thị trực tiếp.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2>9. Đánh giá sản phẩm</h2>
+
+        <h3>Ưu điểm</h3>
+        <ul>
+            <li>AI giúp phát triển ý tưởng và tiết kiệm thời gian xây dựng nội dung.</li>
+            <li>Có thể kết hợp nhiều hình thức thể hiện như hình ảnh, chữ viết và âm thanh.</li>
+            <li>Hỗ trợ tạo ra học liệu trực quan, tăng khả năng tiếp cận kiến thức.</li>
+        </ul>
+
+        <h3>Hạn chế</h3>
+        <ul>
+            <li>Nội dung do AI tạo ra có thể chưa chính xác hoàn toàn.</li>
+            <li>Sản phẩm cần được chỉnh sửa để phù hợp với mục tiêu học tập.</li>
+            <li>Cần chú ý bản quyền hình ảnh, âm thanh và thông tin sử dụng.</li>
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2>10. Nhận xét và bài học kinh nghiệm</h2>
+
+        <p>
+            Qua bài tập này, mình hiểu rõ hơn vai trò của
+            trí tuệ nhân tạo trong quá trình sáng tạo nội dung số.
+            AI có thể hỗ trợ người học hình thành ý tưởng,
+            xây dựng kịch bản và phát triển sản phẩm một cách
+            thuận tiện hơn.
+        </p>
+
+        <p>
+            Tuy nhiên, AI chỉ là công cụ hỗ trợ. Người sử dụng
+            cần chủ động kiểm tra thông tin, lựa chọn nội dung
+            phù hợp và chịu trách nhiệm đối với sản phẩm cuối cùng.
+        </p>
+
+        <p>
+            Trong thời gian tới, mình mong muốn tiếp tục tìm hiểu
+            và ứng dụng các công cụ AI vào việc thiết kế học liệu,
+            xây dựng hoạt động dạy học và sáng tạo nội dung
+            phục vụ chuyên ngành Sư phạm Âm nhạc.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2>Chuyển sang bài tập khác</h2>
+
+        <div class="button-row">
+            <a class="btn" href="bai-tap-1.html">Bài 01</a>
+            <a class="btn" href="bai-tap-2.html">Bài 02</a>
+            <a class="btn" href="bai-tap-3.html">Bài 03</a>
+            <a class="btn" href="bai-tap-4.html">Bài 04</a>
+            <a class="btn btn-primary" href="bai-tap-5.html">Bài 05</a>
+            <a class="btn" href="bai-tap-6.html">Bài 06</a>
+        </div>
+
+        <div class="button-row">
+            <a class="btn" href="du-an.html">← Danh sách bài tập</a>
+            <a class="btn" href="index.html">Trang chủ</a>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    © 2026 Nguyễn Thiện Tâm | Ngành Sư phạm Âm nhạc
+    <br>
+    Học phần Nhập môn Công nghệ số và ứng dụng trí tuệ nhân tạo
+</footer>
+
+</body>
+</html>
