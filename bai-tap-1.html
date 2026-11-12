@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài tập 1 | Nguyễn Thiện Tâm</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1eee7;
+    color: #292923;
+    line-height: 1.8;
+}
+
+header {
+    background: #fffefa;
+    padding: 20px 7%;
+    border-bottom: 1px solid #ded8cc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+header a {
+    color: #292923;
+    text-decoration: none;
+}
+
+.hero {
+    padding: 90px 8%;
+    border-bottom: 1px solid #ded8cc;
+}
+
+.label {
+    color: #b8794e;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 42px;
+    margin: 15px 0;
+}
+
+.hero p {
+    color: #766f64;
+}
+
+main {
+    max-width: 900px;
+    margin: 55px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background: #fffefa;
+    border: 1px solid #e2dbcf;
+    border-radius: 18px;
+    padding: 28px;
+    margin-bottom: 22px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.03);
+}
+
+h2 {
+    margin-bottom: 15px;
+    font-size: 23px;
+}
+
+ul {
+    padding-left: 25px;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 12px;
+    background: #f1eee7;
+    border: 1px solid #ded5c7;
+    color: #292923;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #292923;
+    color: white;
+}
+
+.back {
+    margin-bottom: 30px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #80786d;
+    border-top: 1px solid #ded8cc;
+}
+
+@media(max-width:600px) {
+    h1 {
+        font-size: 30px;
+    }
+    .hero {
+        padding: 60px 7%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="index.html" class="logo">MY PORTFOLIO.</a>
+    <a href="du-an.html">Dự án học tập</a>
+</header>
+
+<section class="hero">
+    <div class="label">BÀI TẬP 01 / 06</div>
+    <h1>Quản lý tệp và thư mục</h1>
+    <p>
+        Thực hành các kỹ năng tạo, đổi tên, sao chép,
+        di chuyển, xóa và khôi phục tệp tin trên Windows.
+    </p>
+</section>
+
+<main>
+
+    <a href="du-an.html" class="btn back">
+        ← Quay lại danh sách bài tập
+    </a>
+
+    <section class="card">
+        <h2>Giới thiệu bài tập</h2>
+        <p>
+            Bài tập giúp mình rèn luyện kỹ năng quản lý
+            tệp tin và thư mục trên hệ điều hành Windows.
+            Thông qua các thao tác thực hành, mình hiểu
+            rõ hơn cách tổ chức, lưu trữ và quản lý dữ liệu.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2>Yêu cầu và nhiệm vụ</h2>
+        <ul>
+            <li>Mở File Explorer và truy cập ổ đĩa.</li>
+            <li>Tạo thư mục mới và thư mục con.</li>
+            <li>Tạo tệp văn bản và đổi tên tệp.</li>
+            <li>Sao chép và di chuyển tệp tin.</li>
+            <li>Xóa tệp và thực hiện xóa vĩnh viễn.</li>
+            <li>Khôi phục tệp từ Recycle Bin.</li>
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2>Quá trình thực hiện</h2>
+        <p>
+            Mình đã thực hiện bài tập thông qua 12 bước,
+            bắt đầu từ việc mở File Explorer, truy cập ổ đĩa,
+            tạo thư mục, tạo tệp văn bản, sao chép, di chuyển,
+            xóa và khôi phục dữ liệu.
+        </p>
+        <p>
+            Trong quá trình thực hiện, mình sử dụng các thao tác
+            chuột và phím tắt như Ctrl + C, Ctrl + V,
+            Ctrl + X và Shift + Delete.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2>Sản phẩm, báo cáo và minh chứng</h2>
+        <p>
+            Bài thực hành được trình bày trong tài liệu PDF
+            và Word, kèm hình ảnh minh chứng cho từng thao tác.
+        </p>
+
+        <div class="actions">
+            <a href="bai-tap-1.pdf"
+               target="_blank"
+               class="btn">
+                📕 Xem báo cáo PDF
+            </a>
+
+            <a href="bai-tap-1.docx"
+               download
+               class="btn">
+                📘 Tải bản Word
+            </a>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Nhận xét và bài học rút ra</h2>
+        <p>
+            Qua bài thực hành, mình đã củng cố kỹ năng
+            quản lý tệp và thư mục trên Windows.
+            Mình hiểu rõ hơn tầm quan trọng của việc
+            sắp xếp dữ liệu khoa học, lựa chọn đúng thao tác
+            và sử dụng máy tính hiệu quả.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2>Chuyển sang bài tập khác</h2>
+        <div class="actions">
+            <a href="bai-tap-1.html" class="btn">Bài 01</a>
+            <a href="bai-tap-2.html" class="btn">Bài 02</a>
+            <a href="bai-tap-3.html" class="btn">Bài 03</a>
+            <a href="bai-tap-4.html" class="btn">Bài 04</a>
+            <a href="bai-tap-5.html" class="btn">Bài 05</a>
+            <a href="bai-tap-6.html" class="btn">Bài 06</a>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    © 2026 Nguyễn Thiện Tâm | My Portfolio
+</footer>
+
+</body>
+</html>
