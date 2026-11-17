@@ -171,3 +171,41 @@ body * {
     }
 }
 
+
+/* SUA NUT XEM VIDEO YOUTUBE */
+.button-row a.btn,
+.button-row a.btn-primary {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 14px 22px !important;
+    background: #25251f !important;
+    color: #ffffff !important;
+    border: 1px solid #25251f !important;
+    border-radius: 10px !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.button-row a.btn:hover,
+.button-row a.btn-primary:hover {
+    background: #b8754e !important;
+    color: #ffffff !important;
+}
+
+/* SUA TIEU DE CAC MUC DANH SO */
+.card h2 {
+    font-size: 24px !important;
+    font-weight: 800 !important;
+    line-height: 1.4 !important;
+    color: #25251f !important;
+    margin-bottom: 18px !important;
+}
+
+/* GIUP TIEU DE KHONG BI CHE KHI CHUYEN DEN MUC */
+.card h2 {
+    scroll-margin-top: 100px;
+}
