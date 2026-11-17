@@ -4,15 +4,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Bài tập 06 - Sử dụng AI có trách nhiệm trong học tập và nghiên cứu">
 <title>Bài tập 06 | Nguyễn Thiện Tâm</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-/* ===== CÀI ĐẶT CHUNG ===== */
+/* =========================
+   1. THIẾT LẬP CHUNG
+========================= */
+
+:root {
+    --background: #F1EFE8;
+    --white: #FFFEFA;
+    --black: #25251F;
+    --text: #625F56;
+    --orange: #C96B45;
+    --border: #E1DACC;
+    --soft: #F7F4ED;
+}
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -20,258 +36,387 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f7fb;
-    color: #193657;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background: var(--background);
+    color: var(--black);
     line-height: 1.8;
-    font-size: 15px;
+    font-size: 14px;
 }
 
-/* ===== THANH MENU ===== */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(900px, 90%);
+    margin: auto;
+}
+
+/* =========================
+   2. THANH ĐIỀU HƯỚNG
+========================= */
+
 .site-header {
-    background: #ffffff;
-    border-bottom: 1px solid #e2e8f0;
+    height: 65px;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
 .header-inner {
-    max-width: 920px;
+    width: min(1120px, 90%);
     margin: auto;
-    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .brand {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 800;
-    letter-spacing: 2px;
-    color: #193657;
-    text-decoration: none;
+    letter-spacing: 1.5px;
+    color: var(--black);
+}
+
+.nav {
+    display: flex;
+    gap: 25px;
 }
 
 .nav a {
-    text-decoration: none;
-    color: #64748b;
-    margin-left: 20px;
-    font-size: 14px;
+    font-size: 12px;
+    color: var(--text);
+    font-weight: 500;
 }
 
 .nav a:hover {
-    color: #193657;
+    color: var(--orange);
 }
 
-/* ===== PHẦN GIỚI THIỆU ===== */
+/* =========================
+   3. PHẦN TIÊU ĐỀ
+========================= */
+
 .hero {
-    background: linear-gradient(135deg, #edf3fa, #f8fafc);
-    padding: 55px 20px 45px;
-    border-bottom: 1px solid #e2e8f0;
+    background: var(--background);
+    padding: 95px 0 75px;
+    border-bottom: 1px solid var(--border);
 }
 
-.hero-inner {
-    max-width: 920px;
-    margin: auto;
-}
-
-.label {
-    font-size: 12px;
-    font-weight: bold;
+.eyebrow {
+    color: var(--orange);
+    font-size: 11px;
+    font-weight: 800;
     letter-spacing: 3px;
-    color: #193657;
+    margin-bottom: 12px;
 }
 
 .hero h1 {
-    font-size: 43px;
+    font-size: clamp(30px, 5vw, 48px);
     line-height: 1.25;
-    margin: 12px 0 18px;
-    color: #193657;
-    max-width: 900px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    max-width: 850px;
+    margin-bottom: 18px;
 }
 
 .hero p {
-    color: #64748b;
-    max-width: 650px;
-    margin-bottom: 22px;
+    color: var(--text);
+    font-size: 14px;
+    max-width: 680px;
 }
 
-.button-row {
+.hero-buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
+/* =========================
+   4. NÚT BẤM
+========================= */
+
 .btn {
-    display: inline-block;
-    padding: 10px 16px;
-    border: 1px solid #a9bdd5;
-    border-radius: 7px;
-    text-decoration: none;
-    color: #193657;
-    font-weight: 600;
-    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 17px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--white);
+    color: var(--black);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
     transition: 0.2s;
 }
 
 .btn:hover {
-    background: #e4edf7;
+    background: #EAE6DC;
+    border-color: var(--orange);
+    transform: translateY(-2px);
 }
 
-.btn-primary {
-    background: #193657;
+.btn-dark {
+    background: var(--black);
     color: white;
-    border-color: #193657;
+    border-color: var(--black);
 }
 
-.btn-primary:hover {
-    background: #284d76;
+.btn-dark:hover {
+    background: var(--orange);
     color: white;
+    border-color: var(--orange);
 }
 
-/* ===== NỘI DUNG CHÍNH ===== */
-.container {
-    max-width: 920px;
-    margin: 36px auto;
-    padding: 0 20px;
+/* =========================
+   5. KHU VỰC NỘI DUNG
+========================= */
+
+main {
+    padding: 65px 0;
 }
 
 .card {
-    background: #ffffff;
-    border: 1px solid #dfe7f1;
-    border-radius: 12px;
-    padding: 24px 22px;
-    margin-bottom: 18px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 27px;
+    margin-bottom: 20px;
+    box-shadow: 0 12px 35px rgba(50, 45, 35, 0.045);
 }
 
 .card h2 {
     font-size: 21px;
-    margin-bottom: 12px;
-    color: #193657;
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    color: var(--black);
 }
 
 .card h3 {
-    font-size: 17px;
-    margin: 18px 0 8px;
+    font-size: 16px;
+    margin: 22px 0 8px;
+    color: var(--black);
 }
 
 .card p {
+    color: var(--text);
     margin-bottom: 12px;
+    text-align: justify;
 }
 
 .card ul,
 .card ol {
-    padding-left: 21px;
-    margin: 10px 0;
+    padding-left: 22px;
+    margin-bottom: 12px;
+    color: var(--text);
 }
 
 .card li {
+    padding-left: 3px;
     margin-bottom: 7px;
 }
 
-.highlight {
-    font-weight: 700;
-    color: #193657;
+.section-number {
+    color: var(--orange);
+    font-weight: 800;
 }
 
-/* ===== KHUNG THÔNG TIN ===== */
+/* =========================
+   6. KHUNG THÔNG TIN
+========================= */
+
 .info-box {
-    background: #f4f7fb;
-    border-left: 4px solid #193657;
+    background: var(--soft);
+    border-left: 4px solid var(--orange);
     border-radius: 7px;
-    padding: 16px;
-    margin: 15px 0;
+    padding: 17px 20px;
+    margin: 17px 0;
 }
 
-/* ===== NÚT TÀI LIỆU ===== */
-.document-buttons {
+.info-box p {
+    margin: 0;
+}
+
+/* =========================
+   7. TÁM NGUYÊN TẮC
+========================= */
+
+.principle {
     display: flex;
-    gap: 10px;
+    gap: 16px;
+    padding: 17px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.principle:last-child {
+    border-bottom: none;
+}
+
+.principle-number {
+    flex-shrink: 0;
+    width: 39px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--black);
+    color: white;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.principle-content h3 {
+    margin: 0 0 5px;
+    font-size: 15px;
+}
+
+.principle-content p {
+    margin: 0;
+}
+
+/* =========================
+   8. SẢN PHẨM VÀ TÀI LIỆU
+========================= */
+
+.product-box {
+    background: var(--soft);
+    border: 1px solid var(--border);
+    padding: 23px;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+.product-box h3 {
+    margin-top: 0;
+}
+
+.file-buttons {
+    display: flex;
     flex-wrap: wrap;
+    gap: 10px;
     margin-top: 20px;
 }
 
-/* ===== CHUYỂN BÀI TẬP ===== */
+/* =========================
+   9. TÀI LIỆU THAM KHẢO
+========================= */
+
+.reference-list {
+    padding-left: 22px;
+}
+
+.reference-list li {
+    margin-bottom: 12px;
+}
+
+.reference-list a {
+    color: var(--orange);
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.reference-list a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   10. ĐIỀU HƯỚNG BÀI TẬP
+========================= */
+
 .exercise-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 9px;
+    gap: 10px;
     margin-top: 15px;
 }
 
 .exercise-grid a {
-    display: block;
-    padding: 9px 12px;
-    border: 1px solid #dfe7f1;
-    border-radius: 7px;
-    color: #193657;
-    text-decoration: none;
-    font-size: 14px;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    border-radius: 9px;
+    font-size: 12px;
+    font-weight: 600;
     transition: 0.2s;
 }
 
 .exercise-grid a:hover {
-    background: #edf3fa;
+    background: var(--background);
+    border-color: var(--orange);
 }
 
 .exercise-grid a.active {
-    background: #193657;
-    color: #ffffff;
-    font-weight: bold;
+    background: var(--black);
+    color: white;
+    border-color: var(--black);
 }
 
-/* ===== CHÂN TRANG ===== */
+/* =========================
+   11. CHÂN TRANG
+========================= */
+
 footer {
-    background: #ffffff;
-    border-top: 1px solid #e2e8f0;
+    background: #F8F6F0;
+    border-top: 1px solid var(--border);
+    padding: 24px 15px;
     text-align: center;
-    padding: 25px 15px;
-    color: #64748b;
-    font-size: 13px;
+    color: #777267;
+    font-size: 12px;
 }
 
-/* ===== ĐIỆN THOẠI ===== */
-@media (max-width: 760px) {
+footer strong {
+    color: var(--black);
+}
+
+/* =========================
+   12. HIỂN THỊ ĐIỆN THOẠI
+========================= */
+
+@media (max-width: 600px) {
+
     .hero {
-        padding: 38px 18px;
+        padding: 65px 0 50px;
     }
 
     .hero h1 {
         font-size: 30px;
     }
 
-    .header-inner {
-        padding: 13px 15px;
-    }
-
-    .nav a {
-        margin-left: 10px;
-        font-size: 13px;
-    }
-
-    .container {
-        margin: 22px auto;
-        padding: 0 13px;
-    }
-
     .card {
-        padding: 20px 16px;
+        padding: 20px;
+    }
+
+    .card h2 {
+        font-size: 19px;
+    }
+
+    .nav {
+        gap: 12px;
     }
 
     .exercise-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-}
 
-@media (max-width: 380px) {
-    .brand {
-        font-size: 13px;
+    .principle {
+        gap: 12px;
     }
 
-    .nav a {
-        margin-left: 7px;
+    .btn {
+        font-size: 11px;
+    }
+
+    main {
+        padding: 35px 0;
     }
 }
 </style>
@@ -280,191 +425,632 @@ footer {
 <body>
 
 <!-- THANH MENU -->
+
 <header class="site-header">
     <div class="header-inner">
+
         <a href="index.html" class="brand">
             MY PORTFOLIO.
         </a>
 
         <nav class="nav">
             <a href="index.html">Trang chủ</a>
-            <a href="du-an.html">Dự án</a>
+            <a href="index.html#projects">
+                Dự án
+            </a>
         </nav>
+
     </div>
 </header>
 
-<!-- PHẦN GIỚI THIỆU -->
-<section class="hero">
-    <div class="hero-inner">
 
-        <div class="label">BÀI TẬP 06 / 06</div>
+<!-- TIÊU ĐỀ BÀI TẬP -->
+
+<section class="hero">
+    <div class="container">
+
+        <div class="eyebrow">
+            BÀI TẬP 06 / 06
+        </div>
 
         <h1>
             Sử dụng AI có trách nhiệm trong học tập và nghiên cứu
         </h1>
 
         <p>
-            Trình bày bộ nguyên tắc cá nhân về sử dụng AI có trách nhiệm
-            dựa trên các nghiên cứu đã thực hiện.
+            Trình bày bộ nguyên tắc cá nhân về sử dụng trí tuệ nhân tạo
+            có trách nhiệm, trung thực và an toàn trong học tập,
+            nghiên cứu, đặc biệt trong lĩnh vực Sư phạm Âm nhạc.
         </p>
 
-        <div class="button-row">
-            <a href="du-an.html" class="btn">
+        <div class="hero-buttons">
+
+            <a href="index.html#projects" class="btn">
                 ← Danh sách 6 bài tập
             </a>
 
             <a href="index.html" class="btn">
                 Trang chủ
             </a>
+
         </div>
 
     </div>
 </section>
 
-<!-- NỘI DUNG -->
-<main class="container">
 
-    <!-- 1. YÊU CẦU VÀ NHIỆM VỤ -->
-    <section class="card">
-        <h2>Yêu cầu và nhiệm vụ</h2>
+<!-- NỘI DUNG CHÍNH -->
 
-        <ul>
-            <li>Tìm hiểu vấn đề sử dụng AI có trách nhiệm trong học tập và nghiên cứu.</li>
+<main>
+<div class="container">
 
-            <li>Tham khảo các tài liệu nghiên cứu đáng tin cậy về đạo đức và ứng dụng AI trong giáo dục.</li>
 
-            <li>Xây dựng bộ nguyên tắc cá nhân về sử dụng AI có trách nhiệm, phù hợp với sinh viên ngành Sư phạm Âm nhạc.</li>
+<!-- 1. GIỚI THIỆU -->
 
-            <li>Trình bày sản phẩm thành tài liệu Word và PDF, có giải thích, ví dụ và nguồn tham khảo.</li>
-        </ul>
-    </section>
+<section class="card">
 
-    <!-- 2. QUÁ TRÌNH THỰC HIỆN -->
-    <section class="card">
-        <h2>Quá trình thực hiện</h2>
+    <h2>Giới thiệu bài tập</h2>
+
+    <p>
+        Trong thời đại công nghệ phát triển mạnh mẽ, trí tuệ nhân tạo
+        (AI) đang được sử dụng ngày càng phổ biến trong học tập,
+        nghiên cứu và sáng tạo nội dung. AI mang lại nhiều lợi ích
+        như hỗ trợ tìm kiếm thông tin, giải thích kiến thức,
+        xây dựng ý tưởng và nâng cao hiệu quả công việc.
+    </p>
+
+    <p>
+        Tuy nhiên, việc sử dụng AI cũng đặt ra những vấn đề về
+        tính chính xác, đạo đức, bản quyền, quyền riêng tư và
+        tính trung thực trong học thuật.
+    </p>
+
+    <p>
+        Vì vậy, bài tập này tập trung tìm hiểu cách sử dụng AI
+        một cách có trách nhiệm và xây dựng bộ 8 nguyên tắc
+        cá nhân phù hợp với sinh viên ngành Sư phạm Âm nhạc.
+    </p>
+
+</section>
+
+
+<!-- 2. MỤC TIÊU -->
+
+<section class="card">
+
+    <h2>
+        <span class="section-number">I.</span>
+        Mục tiêu bài tập
+    </h2>
+
+    <p>
+        Bài tập hướng đến những mục tiêu sau:
+    </p>
+
+    <ul>
+        <li>
+            Hiểu được vai trò, lợi ích và những hạn chế của
+            trí tuệ nhân tạo trong học tập và nghiên cứu.
+        </li>
+
+        <li>
+            Tìm hiểu các vấn đề đạo đức, an toàn thông tin
+            và liêm chính học thuật khi sử dụng AI.
+        </li>
+
+        <li>
+            Biết cách kiểm tra, đối chiếu và đánh giá
+            thông tin do AI cung cấp.
+        </li>
+
+        <li>
+            Xây dựng bộ nguyên tắc cá nhân về sử dụng AI
+            có trách nhiệm.
+        </li>
+
+        <li>
+            Rèn luyện tư duy độc lập, tư duy phản biện
+            và khả năng ứng dụng công nghệ trong ngành
+            Sư phạm Âm nhạc.
+        </li>
+    </ul>
+
+</section>
+
+
+<!-- 3. QUÁ TRÌNH THỰC HIỆN -->
+
+<section class="card">
+
+    <h2>
+        <span class="section-number">II.</span>
+        Tóm tắt quá trình thực hiện
+    </h2>
+
+    <h3>1. Xác định nội dung nghiên cứu</h3>
+
+    <p>
+        Trước tiên, mình xác định chủ đề nghiên cứu là
+        "Sử dụng AI có trách nhiệm trong học tập và nghiên cứu".
+        Nội dung tập trung vào các vấn đề như độ chính xác của
+        thông tin, tính trung thực học thuật, bản quyền,
+        bảo vệ dữ liệu cá nhân và trách nhiệm của người sử dụng.
+    </p>
+
+    <h3>2. Tìm kiếm và tham khảo tài liệu</h3>
+
+    <p>
+        Mình tìm hiểu các tài liệu liên quan đến đạo đức
+        trí tuệ nhân tạo, hướng dẫn sử dụng AI trong giáo dục
+        và những nguyên tắc bảo đảm tính liêm chính học thuật.
+        Trong đó, chú trọng tham khảo tài liệu của UNESCO
+        và các nguồn thông tin đáng tin cậy.
+    </p>
+
+    <h3>3. Sử dụng công cụ AI hỗ trợ</h3>
+
+    <p>
+        Mình sử dụng ChatGPT để hỗ trợ tổng hợp thông tin,
+        xây dựng bố cục, gợi ý các nguyên tắc và diễn đạt
+        nội dung. Sau đó, mình đối chiếu với tài liệu tham khảo,
+        xem xét và điều chỉnh để nội dung phù hợp với mục tiêu
+        bài tập và chuyên ngành Sư phạm Âm nhạc.
+    </p>
+
+    <h3>4. Xây dựng bộ nguyên tắc cá nhân</h3>
+
+    <p>
+        Từ những nội dung đã tìm hiểu, mình lựa chọn và
+        xây dựng 8 nguyên tắc cơ bản. Mỗi nguyên tắc đều
+        có phần giải thích và ví dụ vận dụng trong học tập,
+        nghiên cứu âm nhạc.
+    </p>
+
+    <h3>5. Hoàn thiện sản phẩm</h3>
+
+    <p>
+        Cuối cùng, mình hoàn thiện nội dung báo cáo,
+        bổ sung nguồn tham khảo và trình bày sản phẩm
+        dưới dạng tài liệu Word và PDF.
+    </p>
+
+    <div class="info-box">
+        <p>
+            <strong>Khó khăn gặp phải:</strong>
+            Một số nội dung do AI cung cấp còn chung chung
+            hoặc chưa có nguồn kiểm chứng rõ ràng.
+            Mình khắc phục bằng cách đối chiếu tài liệu,
+            lựa chọn thông tin phù hợp và tự điều chỉnh
+            nội dung trước khi hoàn thiện.
+        </p>
+    </div>
+
+</section>
+
+
+<!-- 4. BỘ 8 NGUYÊN TẮC -->
+
+<section class="card">
+
+    <h2>
+        <span class="section-number">III.</span>
+        Bộ 8 nguyên tắc sử dụng AI có trách nhiệm
+    </h2>
+
+    <p>
+        Dựa trên quá trình tìm hiểu và nghiên cứu,
+        mình xây dựng 8 nguyên tắc cá nhân sau đây:
+    </p>
+
+
+    <div class="principle">
+
+        <div class="principle-number">01</div>
+
+        <div class="principle-content">
+
+            <h3>Sử dụng AI đúng mục đích</h3>
+
+            <p>
+                Sử dụng AI như một công cụ hỗ trợ học tập,
+                tìm kiếm kiến thức và phát triển ý tưởng,
+                không lạm dụng AI để thay thế hoàn toàn
+                quá trình tư duy và học tập của bản thân.
+            </p>
+
+        </div>
+    </div>
+
+
+    <div class="principle">
+
+        <div class="principle-number">02</div>
+
+        <div class="principle-content">
+
+            <h3>Duy trì tư duy độc lập</h3>
+
+            <p>
+                Chủ động suy nghĩ, phân tích và đưa ra
+                quan điểm cá nhân. Không sao chép toàn bộ
+                câu trả lời của AI mà không hiểu nội dung.
+            </p>
+
+        </div>
+    </div>
+
+
+    <div class="principle">
+
+        <div class="principle-number">03</div>
+
+        <div class="principle-content">
+
+            <h3>Kiểm chứng thông tin</h3>
+
+            <p>
+                Kiểm tra tính chính xác của thông tin do AI
+                cung cấp bằng cách đối chiếu với giáo trình,
+                tài liệu chuyên môn và các nguồn đáng tin cậy.
+            </p>
+
+        </div>
+    </div>
+
+
+    <div class="principle">
+
+        <div class="principle-number">04</div>
+
+        <div class="principle-content">
+
+            <h3>Trung thực trong học thuật</h3>
+
+            <p>
+                Không sử dụng AI để gian lận, giả mạo kết quả
+                nghiên cứu hoặc nhận sản phẩm do AI tạo ra
+                là hoàn toàn do bản thân thực hiện.
+                Cần minh bạch về mức độ sử dụng AI.
+            </p>
+
+        </div>
+    </div>
+
+
+    <div class="principle">
+
+        <div class="principle-number">05</div>
+
+        <div class="principle-content">
+
+            <h3>Tôn trọng bản quyền và sở hữu trí tuệ</h3>
+
+            <p>
+                Tôn trọng quyền tác giả đối với tài liệu,
+                hình ảnh, âm thanh và tác phẩm âm nhạc.
+                Không tự ý sử dụng hoặc công bố sản phẩm
+                của người khác khi chưa được phép.
+            </p>
+
+        </div>
+    </div>
+
+
+    <div class="principle">
+
+        <div class="principle-number">06</div>
+
+        <div class="principle-content">
+
+            <h3>Bảo vệ dữ liệu cá nhân</h3>
+
+            <p>
+                Không đưa thông tin cá nhân, tài liệu riêng tư
+                hoặc dữ liệu nhạy cảm lên các công cụ AI
+                khi chưa được phép và chưa đánh giá
+                mức độ an toàn.
+            </p>
+
+        </div>
+    </div>
+
+
+    <div class="principle">
+
+        <div class="principle-number">07</div>
+
+        <div class="principle-content">
+
+            <h3>Sử dụng AI công bằng và có chọn lọc</h3>
+
+            <p>
+                Nhận biết những hạn chế và sai lệch có thể
+                xuất hiện trong nội dung AI tạo ra.
+                Không sử dụng AI để tạo ra nội dung sai lệch,
+                phân biệt đối xử hoặc gây ảnh hưởng tiêu cực
+                đến người khác.
+            </p>
+
+        </div>
+    </div>
+
+
+    <div class="principle">
+
+        <div class="principle-number">08</div>
+
+        <div class="principle-content">
+
+            <h3>Chịu trách nhiệm với sản phẩm cuối cùng</h3>
+
+            <p>
+                Người sử dụng phải chủ động kiểm tra,
+                chỉnh sửa và chịu trách nhiệm về nội dung
+                mình công bố, kể cả khi có sự hỗ trợ
+                của trí tuệ nhân tạo.
+            </p>
+
+        </div>
+    </div>
+
+
+</section>
+
+
+<!-- 5. VÍ DỤ ỨNG DỤNG -->
+
+<section class="card">
+
+    <h2>
+        <span class="section-number">IV.</span>
+        Ví dụ vận dụng trong ngành Sư phạm Âm nhạc
+    </h2>
+
+    <p>
+        Trong quá trình học tập chuyên ngành Sư phạm Âm nhạc,
+        mình có thể sử dụng AI để hỗ trợ nhiều hoạt động
+        khác nhau.
+    </p>
+
+    <h3>1. Trong học tập lý thuyết âm nhạc</h3>
+
+    <p>
+        Có thể sử dụng ChatGPT để giải thích các khái niệm
+        về nhịp, phách, quãng, hợp âm và cấu trúc âm nhạc.
+        Tuy nhiên, cần đối chiếu với giáo trình và kiến thức
+        chuyên môn để bảo đảm tính chính xác.
+    </p>
+
+    <h3>2. Trong sáng tác và phối khí</h3>
+
+    <p>
+        AI có thể gợi ý ý tưởng sáng tác, vòng hòa thanh,
+        tiết tấu và cách phối khí. Người học cần chủ động
+        lựa chọn, điều chỉnh và phát triển sản phẩm
+        theo cảm nhận âm nhạc của bản thân.
+    </p>
+
+    <h3>3. Trong thiết kế bài giảng</h3>
+
+    <p>
+        Có thể sử dụng AI để gợi ý trò chơi âm nhạc,
+        câu hỏi trắc nghiệm, giáo án và hoạt động học tập.
+        Giáo viên cần kiểm tra nội dung, điều chỉnh
+        theo độ tuổi và năng lực của học sinh.
+    </p>
+
+    <h3>4. Trong nghiên cứu khoa học</h3>
+
+    <p>
+        AI hỗ trợ tìm kiếm ý tưởng, xây dựng đề cương
+        và tổng hợp tài liệu. Tuy nhiên, người nghiên cứu
+        cần kiểm chứng nguồn trích dẫn và tự chịu trách nhiệm
+        về kết quả nghiên cứu.
+    </p>
+
+</section>
+
+
+<!-- 6. SẢN PHẨM CUỐI CÙNG -->
+
+<section class="card">
+
+    <h2>
+        <span class="section-number">V.</span>
+        Sản phẩm, báo cáo và minh chứng
+    </h2>
+
+    <p>
+        Sản phẩm cuối cùng là tài liệu
+        <strong>"Bộ 8 nguyên tắc sử dụng AI có trách nhiệm
+        trong học tập và nghiên cứu"</strong>,
+        dành cho sinh viên ngành Sư phạm Âm nhạc.
+    </p>
+
+    <p>
+        Nội dung tài liệu gồm 8 nguyên tắc, phần giải thích,
+        ví dụ vận dụng thực tế, cơ sở tham khảo và
+        những lưu ý khi sử dụng AI trong học tập.
+    </p>
+
+    <div class="product-box">
+
+        <h3>Tài liệu hoàn thiện</h3>
 
         <p>
-            Trước tiên, mình xác định chủ đề "Sử dụng AI có trách nhiệm
-            trong học tập và nghiên cứu", tập trung vào các vấn đề an toàn
-            thông tin, đạo đức và liêm chính học thuật.
+            Bạn có thể xem trực tiếp báo cáo PDF hoặc
+            tải tài liệu Word để nghiên cứu và chỉnh sửa.
         </p>
 
-        <p>
-            Mình tham khảo các tài liệu của UNESCO về đạo đức trí tuệ
-            nhân tạo, hướng dẫn sử dụng AI tạo sinh trong giáo dục
-            và khung năng lực AI dành cho giáo viên.
-        </p>
-
-        <p>
-            ChatGPT được sử dụng để hỗ trợ tổng hợp thông tin,
-            xây dựng cấu trúc và diễn đạt các nguyên tắc.
-            Nội dung được đối chiếu với tài liệu tham khảo và
-            điều chỉnh cho phù hợp với ngành Sư phạm Âm nhạc.
-        </p>
-
-        <p>
-            Một vấn đề cần xử lý trong quá trình xây dựng là bảo đảm
-            các nguyên tắc không quá chung chung. Vì vậy, mỗi nguyên
-            tắc được bổ sung nội dung giải thích hoặc ví dụ vận dụng thực tế.
-        </p>
-
-        <p>
-            Cuối cùng, mình hoàn thiện bộ tám nguyên tắc, bổ sung cơ sở
-            tham khảo và trình bày thành tài liệu Word, PDF.
-        </p>
-    </section>
-
-    <!-- 3. SẢN PHẨM VÀ MINH CHỨNG -->
-    <section class="card">
-        <h2>Sản phẩm, báo cáo và minh chứng</h2>
-
-        <p>
-            Sản phẩm cuối cùng là tài liệu "Bộ 8 nguyên tắc sử dụng AI
-            có trách nhiệm trong học tập và nghiên cứu", dành cho
-            sinh viên ngành Sư phạm Âm nhạc.
-        </p>
-
-        <p>
-            Tài liệu gồm tám nguyên tắc về sử dụng AI đúng mục đích,
-            tư duy độc lập, kiểm chứng thông tin, trung thực học thuật,
-            bản quyền, bảo vệ dữ liệu cá nhân, tính công bằng và
-            trách nhiệm với sản phẩm cuối cùng.
-        </p>
-
-        <p>
-            Sản phẩm có phần ví dụ áp dụng, cơ sở nghiên cứu
-            và tài liệu tham khảo.
-        </p>
-
-        <div class="document-buttons">
+        <div class="file-buttons">
 
             <a href="Bai-tap-6.pdf"
                target="_blank"
-               class="btn btn-primary">
+               class="btn btn-dark">
                 Xem báo cáo PDF
             </a>
 
             <a href="Bai-tap-6.docx"
-               download
-               class="btn">
+               class="btn"
+               download>
                 Tải báo cáo Word
             </a>
 
         </div>
-    </section>
 
-    <!-- 4. NHẬN XÉT -->
-    <section class="card">
-        <h2>Nhận xét và bài học rút ra</h2>
+    </div>
 
-        <p>
-            Việc tìm hiểu các nguyên tắc sử dụng AI có trách nhiệm
-            cho thấy tầm quan trọng của việc kiểm chứng thông tin,
-            bảo vệ dữ liệu và tuân thủ các quy định về liêm chính học thuật.
-        </p>
+</section>
 
-        <p>
-            Trong học tập và nghiên cứu âm nhạc, AI có thể hỗ trợ tìm kiếm
-            thông tin, xây dựng học liệu và phát triển ý tưởng.
-            Tuy nhiên, người sử dụng cần chủ động kiểm tra kiến thức
-            chuyên môn và đánh giá nội dung do AI cung cấp.
-        </p>
 
-        <p>
-            Bài học quan trọng là sử dụng AI như một công cụ hỗ trợ
-            quá trình học tập, đồng thời duy trì tư duy độc lập
-            và trách nhiệm đối với sản phẩm mà mình thực hiện.
-        </p>
-    </section>
+<!-- 7. NHẬN XÉT -->
 
-    <!-- 5. CHUYỂN BÀI TẬP -->
-    <section class="card">
-        <h2>Chuyển sang bài tập khác</h2>
+<section class="card">
 
-        <div class="exercise-grid">
+    <h2>
+        <span class="section-number">VI.</span>
+        Nhận xét và bài học rút ra
+    </h2>
 
-            <a href="bai-tap-1.html">Bài 01</a>
+    <p>
+        Qua bài tập này, mình hiểu rõ hơn về vai trò
+        của trí tuệ nhân tạo trong học tập và nghiên cứu.
+        AI có thể giúp tiết kiệm thời gian, hỗ trợ tìm kiếm
+        thông tin và phát triển ý tưởng sáng tạo.
+    </p>
 
-            <a href="bai-tap-2.html">Bài 02</a>
+    <p>
+        Tuy nhiên, AI không phải lúc nào cũng cung cấp
+        thông tin chính xác. Người sử dụng cần có khả năng
+        kiểm chứng, đánh giá và lựa chọn nội dung phù hợp.
+    </p>
 
-            <a href="bai-tap-3.html">Bài 03</a>
+    <p>
+        Đối với ngành Sư phạm Âm nhạc, AI là công cụ hữu ích
+        trong việc thiết kế bài giảng, xây dựng học liệu
+        và hỗ trợ sáng tạo. Dù vậy, kiến thức chuyên môn,
+        cảm xúc nghệ thuật và vai trò của người giáo viên
+        vẫn không thể được thay thế hoàn toàn bởi AI.
+    </p>
 
-            <a href="bai-tap-4.html">Bài 04</a>
+    <p>
+        Bài học quan trọng nhất mình rút ra là:
+        cần sử dụng AI một cách chủ động, có chọn lọc,
+        trung thực và có trách nhiệm, đồng thời luôn
+        duy trì tư duy độc lập và khả năng sáng tạo
+        của bản thân.
+    </p>
 
-            <a href="bai-tap-5.html">Bài 05</a>
+</section>
 
-            <a href="bai-tap-6.html" class="active">Bài 06</a>
 
-        </div>
-    </section>
+<!-- 8. TÀI LIỆU THAM KHẢO -->
 
+<section class="card">
+
+    <h2>
+        <span class="section-number">VII.</span>
+        Tài liệu tham khảo
+    </h2>
+
+    <p>
+        Một số tài liệu được sử dụng để tìm hiểu
+        về đạo đức AI và ứng dụng AI trong giáo dục:
+    </p>
+
+    <ol class="reference-list">
+
+        <li>
+            UNESCO (2021). Recommendation on the Ethics
+            of Artificial Intelligence.
+            <br>
+            <a href="https://unesdoc.unesco.org/ark:/48223/pf0000381137"
+               target="_blank">
+                Xem tài liệu UNESCO
+            </a>
+        </li>
+
+        <li>
+            UNESCO (2023). Guidance for Generative AI
+            in Education and Research.
+            <br>
+            <a href="https://unesdoc.unesco.org/ark:/48223/pf0000386693"
+               target="_blank">
+                Xem hướng dẫn UNESCO
+            </a>
+        </li>
+
+        <li>
+            Các tài liệu, giáo trình và nội dung học tập
+            thuộc học phần Nhập môn Công nghệ số và
+            ứng dụng trí tuệ nhân tạo.
+        </li>
+
+    </ol>
+
+</section>
+
+
+<!-- 9. CHUYỂN BÀI TẬP -->
+
+<section class="card">
+
+    <h2>Chuyển sang bài tập khác</h2>
+
+    <div class="exercise-grid">
+
+        <a href="bai-tap-1.html">Bài 01</a>
+
+        <a href="bai-tap-2.html">Bài 02</a>
+
+        <a href="bai-tap-3.html">Bài 03</a>
+
+        <a href="bai-tap-4.html">Bài 04</a>
+
+        <a href="bai-tap-5.html">Bài 05</a>
+
+        <a href="bai-tap-6.html" class="active">
+            Bài 06
+        </a>
+
+    </div>
+
+    <div class="file-buttons">
+
+        <a href="index.html#projects" class="btn">
+            ← Danh sách bài tập
+        </a>
+
+        <a href="bai-tap-5.html" class="btn btn-dark">
+            Bài tập trước: Bài 05
+        </a>
+
+        <a href="index.html" class="btn">
+            Trang chủ
+        </a>
+
+    </div>
+
+</section>
+
+
+</div>
 </main>
 
+
 <!-- CHÂN TRANG -->
+
 <footer>
-    © 2026 Nguyễn Thiện Tâm | Ngành Sư phạm Âm nhạc
-    <br>
-    Học phần Nhập môn Công nghệ số và ứng dụng trí tuệ nhân tạo
+
+    <p>
+        © 2026 <strong>Nguyễn Thiện Tâm</strong>
+        | Ngành Sư phạm Âm nhạc
+    </p>
+
+    <p>
+        Học phần Nhập môn Công nghệ số và ứng dụng trí tuệ nhân tạo
+    </p>
+
 </footer>
 
 </body>
